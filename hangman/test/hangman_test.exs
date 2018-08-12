@@ -2,7 +2,11 @@ defmodule HangmanTest do
   use ExUnit.Case
   doctest Hangman
 
-  test "greets the world" do
-    assert Hangman.hello() == :world
+  alias Hangman.Game
+
+  test "new_game returns structure" do
+    game = Game.new_game()
+    assert game.turns_left == 7
+    assert game.game_state == :initializing
   end
 end
