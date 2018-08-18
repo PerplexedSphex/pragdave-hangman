@@ -17,7 +17,6 @@ defmodule Hangman.Game do
     new_game(Dictionary.random_word())
   end
 
-  # make move accepts a game and returns { game, tally }
   def make_move(game = %{ game_state: state }, _guess) when state in [:won, :lost] do
     game
   end
